@@ -1,9 +1,10 @@
 import "./App.css";
+import { GifExpertApp } from "./components/GifExpertApp";
 
 function App() {
   return (
     <>
-      <h1>Giphy Project</h1>
+      <GifExpertApp />
     </>
   );
 }
