@@ -1,25 +1,16 @@
-import { useState } from "react";
+import React from "react";
 
-export const AddCategory = () => {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
+const AddCategory = ({ categories }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={inputValue}
-        placeholder="write here..."
-        onChange={handleInputChange}
-      />
-    </form>
+    <>
+      <h2>Categories</h2>
+      <hr />
+      <ol>
+        {categories.map((category, idx) => (
+          <li key={idx + category}>{category}</li>
+        ))}
+      </ol>
+    </>
   );
 };
 
