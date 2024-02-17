@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AddCategory = ({ categories }) => {
+export const AddCategory = ({ categories, setCategories }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    !inputValue
+      ? ""
+      : !categories.includes(inputValue)
+      ? setCategories([...categories, inputValue])
+      : "";
+  };
+
   return (
     <>
-      <h2>Categories</h2>
+      <h2>AddCategory</h2>
       <hr />
-      <ol>
-        {categories.map((category, idx) => (
-          <li key={idx + category}>{category}</li>
-        ))}
-      </ol>
+      <form onSubmit={handleAdd}>
+        <input
+          type="text"
+          placeholder="Write here..."
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+        <button onClick={handleAdd}>Agregar</button>
+      </form>
     </>
   );
 };
-
-export default AddCategory;

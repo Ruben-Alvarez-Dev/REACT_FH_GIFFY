@@ -1,12 +1,12 @@
 import "./App.css";
-import GifExpertApp from "./components/GifExpertApp";
+import { GifExpertApp } from "./GifExpertApp";
 
-function App() {
+export const App = () => {
   return (
     <>
+      {/* <h2>GifExpertApp</h2>
+      <hr /> */}
       <GifExpertApp />
     </>
   );
-}
-
-export default App;
+};
