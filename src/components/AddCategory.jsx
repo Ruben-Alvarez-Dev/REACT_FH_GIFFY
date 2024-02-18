@@ -14,7 +14,7 @@ export const AddCategory = ({ categories, setCategories }) => {
       ? ""
       : categories.includes(inputValue)
       ? ""
-      : setCategories([...categories, inputValue]);
+      : setCategories([inputValue, ...categories]);
   };
 
   return (
