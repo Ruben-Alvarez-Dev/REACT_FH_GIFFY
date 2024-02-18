@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { GifGridItem } from "./GifGridItem";
 
 const api_url =
   "https://api.giphy.com/v1/gifs/search?api_key=bnH8Bdwd1m3qsbVOSYu9oUWmmhm2CHnj&q=gandalf&limit=10&offset=0&rating=g&lang=es&bundle=low_bandwidth";
@@ -29,13 +30,11 @@ export const GifGrid = ({ category }) => {
   /* getGifs(); */
 
   return (
-    <>
+    <div>
       <h3> {category}</h3>
-      <ol>
-        {images.map(({ id, title }) => (
-          <li key={id}>{title}</li>
-        ))}
-      </ol>
-    </>
+      {images.map((img) => (
+        <GifGridItem key={img.id} {...img} />
+      ))}
+    </div>
   );
 };
