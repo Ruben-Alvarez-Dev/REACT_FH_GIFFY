@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 /* import "./GifExpertApp.css"; */
 import { AddCategory } from "./components/AddCategory";
